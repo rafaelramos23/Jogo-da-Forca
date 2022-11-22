@@ -131,11 +131,11 @@ async function botaoJogarNovamente(cor1, cor2){
 function carregaImagemForca(){
     switch(tentativas){
         case 5:
-            document.getElementById("imagem").style.background = "url('../src/img/forca01.png')";
+            document.getElementById("imagem").style.background = "url('src/img/forca01.png')";
             break;
         
             case 4:
-                document.getElementById("imagem").style.background = "url('../src/img/forca02.png')";
+                document.getElementById("imagem").style.background = "url('src/img/forca02.png')";
                 break;
             
             case 3:
