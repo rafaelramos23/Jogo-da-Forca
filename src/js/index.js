@@ -146,7 +146,7 @@ function carregaImagemForca(){
                  break;
 
             case 1:
-                document.getElementById("imagem").style.background = "url('./img/forca05.png')";
+                document.getElementById("imagem").style.background = "url('../img/forca05.png')";
                 break;
 
             case 0:
