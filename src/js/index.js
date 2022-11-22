@@ -107,7 +107,7 @@ function comparaListas(letra){
     if(vitoria == true){
         //mensagem
         tentativas=0;
-        abreModal("Uhull, você venceu!"," 10 pontos para Grifinória!!!");
+        abreModal("Uhull, você acertou!"," 10 pontos para Grifinória!!!");
         botaoJogarNovamente("blue","orange");
        
     }
@@ -424,6 +424,94 @@ function carregaListaAutomatica(){
         palavra051 = {
             nome: "LUFA LUFA",
             categoria:"CASA DE HARRY POTTER"
+        },
+        palavra052 = {
+            nome: "ARROZ CARRETEIRO",
+            categoria:"COMIDA TÍPICA DE ITAPETININGA"
+        },
+        palavra053 = {
+            nome: "FEIJAO GORDO",
+            categoria:"COMIDA TÍPICA DE ITAPETININGA"
+        },
+        palavra054 = {
+            nome: "BOLINHO DE FRANGO",
+            categoria:"COMIDA TÍPICA DE ITAPETININGA"
+        },
+        palavra055 = {
+            nome: "CATIRA",
+            categoria:"CULTURA IMATERIAL - DANÇA"
+        },
+        palavra056 = {
+            nome: "FANDANGO",
+            categoria:"CULTURA IMATERIAL - DANÇA"
+        },
+        palavra057 = {
+            nome: "VANERAO",
+            categoria:"CULTURA IMATERIAL - DANÇA"
+        },
+        palavra058 = {
+            nome: "POETA DO MONTE SANTO",
+            categoria:"PERSONAGENS DE ITAPETININGA"
+        },
+        palavra059 = {
+            nome: "PEIXOTO GOMIDE",
+            categoria:"PERSONAGENS DE ITAPETININGA"
+        },
+        palavra060 = {
+            nome: "FERNANDO PRESTES DE ALBUQUERQUE",
+            categoria:"PERSONAGENS DE ITAPETININGA"
+        },
+        palavra061 = {
+            nome: "CORINA CACAPAVA BARTH",
+            categoria:"PERSONAGENS DE ITAPETININGA"
+        },
+        palavra062 = {
+            nome: "ANESIA PINHEIRO MACHADO",
+            categoria:"PERSONAGENS DE ITAPETININGA"
+        },
+        palavra063 = {
+            nome: "TEDDY VEIRA",
+            categoria:"PERSONAGENS DE ITAPETININGA"
+        },
+        palavra064 = {
+            nome: "CAMPOS SALES",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra065 = {
+            nome: "VIRGILIO SILVEIRA",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra066 = {
+            nome: "VIRGILIO DE REZENDE",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra067 = {
+            nome: "BENJAMIN CONSTANT",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra068 = {
+            nome: "BORBA GATO",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra069 = {
+            nome: "PRUDENTE DE MORAES",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra070 = {
+            nome: "DOUTOR COUTINHO",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra071 = {
+            nome: "ALFREDO MAIA",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra072 = {
+            nome: "WENCESLAU BRAS",
+            categoria:"RUAS DE ITAPETININGA"
+        },
+        palavra073 = {
+            nome: "ACACIO DE MORAES TERRA",
+            categoria:"RUAS DE ITAPETININGA"
         }
         
     ];
@@ -432,6 +520,7 @@ function carregaListaAutomatica(){
 //refazer posteriormente
 
 function adicionarPalavra(){
+    //const pos = palavraSecretaSorteada.indexOf(letra);
     let addPalavra = document.getElementById("addPalavra").value.toUpperCase();
     let addCategoria = document.getElementById("addCategoria").value.toUpperCase();
 
@@ -445,8 +534,13 @@ function adicionarPalavra(){
         categoria: addCategoria
     }
 
-    palavras.push(palavra);  
-    sortear();
+    
+    palavras.push(palavra);
+    // sortear();
+    palavraSecretaCategoria = addCategoria;
+    palavraSecretaSorteada = addPalavra;
+   
+    montarPalavraNaTela();
     
     document.getElementById("addPalavra").value = "";
     document.getElementById("addCategoria").value = "";
@@ -479,6 +573,7 @@ function resetaTeclas(){
         x.style.color = "#8B008B";
         x.disabled = false;
     });
+    
 }
 
 
