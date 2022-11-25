@@ -4,6 +4,7 @@ let palavras = [];
 let palavraSecretaCategoria;
 let palavraSecretaSorteada;
 let jogarNovamente = true;
+let pontosHogwarts = "";
 
 carregaListaAutomatica();
 
@@ -78,6 +79,9 @@ function mudarStyleLetra(tecla, condicao){
 
 function comparaListas(letra){
     const pos = palavraSecretaSorteada.indexOf(letra);
+    const casa = parseInt(Math.random()* 5 + 1);
+    const pontos = (parseInt(Math.random()* 6 + 1) * 10);
+    
     if (pos < 0){
         tentativas--;
         carregaImagemForca();
@@ -107,7 +111,24 @@ function comparaListas(letra){
     if(vitoria == true){
         //mensagem
         tentativas=0;
-        abreModal("Uhull, você acertou!"," 10 pontos para Grifinória!!!");
+        switch (casa){
+            case 1:
+                 pontosHogwarts = pontos + " pontos para Grifinória!!!";
+                 break;
+             case 2:
+                 pontosHogwarts = pontos + " pontos para Sonserina!!!";
+                 break;
+             case 3:
+                 pontosHogwarts = pontos + " pontos para Corvinal!!!";
+                 break;
+             case 4:
+                 pontosHogwarts = pontos + " pontos para Lufa-Lufa!!!";
+                 break;
+            default:
+                pontosHogwarts = pontos + " pontos para Sonserina!!!";
+        }
+       
+        abreModal("Uhull, você acertou!"," "+pontosHogwarts);
         botaoJogarNovamente("blue","orange");
        
     }
